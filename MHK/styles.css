@@ -1,0 +1,2001 @@
+/*Generel styling*/
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Forhindrer horisontal scrolling */
+    background-color: #f0eff0;
+}
+
+/*Font styling til overskrifter*/
+h1, h2, h3, h4, h5, h6 {
+font-family: "niveau-grotesk";
+font-weight: 700;
+font-style: normal;
+}
+
+/*Font styling til brødttekst, a tags og buttons*/
+p, a, button, div {
+    font-family: "pelago";
+    font-weight: 300;
+    font-style: normal;
+}
+
+/********************************************************************************************/
+
+/*Header start*/
+
+.site-header {
+    background-color: #B52A2D;
+    color: white;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    max-width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease, height 0.3s ease; /* Smooth transition for background farve, padding, og height */
+}
+
+.site-header.scrolled {
+    background-color: rgba(181, 42, 45, 0.8); /* En Smule transparent background */
+    padding: 5px 15px; /* retuseret padding, når navbar er transparent */
+}
+
+
+.header-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.header-left-column {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo {
+    height: 8rem;
+    max-width: 100%;
+    transition: height 0.3s ease; /* Smooth transition for logo height */
+}
+
+.site-header.scrolled .header-logo {
+    height: 6rem; /* Reduceret højde for logo når baggrund er transparent */
+}
+
+.header-right-column {
+    width: 80%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header-top-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top-right h1 {
+    margin-top: 1rem;
+    padding: 0;
+    font-size: 1.5em;
+    margin-left: .5rem;
+    transition: font-size 0.3s ease; /* Smooth transition for font size */
+}
+
+.header-top-right a {
+    text-decoration: none;
+    color: white;
+}
+
+.site-header.scrolled .header-top-right h1 {
+    font-size: 1.2em; /* mindre font size for "Middelfart Håndboldklub når header er transparent */
+}
+
+.header-top-right .header-login-link {
+    background-color: white;
+    color: #B52A2D;
+    margin-right: 2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header-main-nav {
+    display: flex;
+    margin-top: 20px; /* Reducere margin så den er aligned med mindre header */
+}
+
+.header-main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header-main-nav li {
+    margin: 0 10px;
+    position: relative;
+}
+
+.header-main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 4rem;
+    box-sizing: border-box; 
+    display: inline-block; 
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.header-main-nav a.active {
+    font-weight: bold;
+    background-color: white;
+    color: black;
+}
+
+.header-main-nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+.header-divider-line {
+    max-width: 100%;
+    height: 1px;
+    background-color: white;
+    margin: 10px 0;
+}
+
+/* Dropdown styling */
+.header-dropdown-content {
+    display: none; /* Sørg for, at det er skjult som standard */
+    position: absolute;
+    border-radius: 5%;
+    background-color: #fff;
+    top: 33px; /* Justeret for at flytte længere ned */
+    left: 0; 
+    z-index: 1;
+}
+
+
+
+#dropdown-tekst:hover {
+    display: none;
+}
+
+.header-dropdown-content li {
+    padding: 12px 12px;
+}
+
+.header-dropdown-content li a {
+    color: black;
+    text-decoration: none;
+}
+
+.header-dropdown-arrow {
+    margin-left: 5px;
+}
+
+.header-dropdown-content a {
+    color: black; 
+    padding: 5px 0;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/*Hover til dropdown*/
+
+.header-dropdown-content a:hover {
+    background-color: #C5C5C5;
+}
+
+.header-dropdown-content:hover {
+    background-color: #C5C5C5;
+}
+
+
+
+/* Dropdown styling */
+.nyttig-dropdown-content {
+    display: none; /* Sørg for, at det er skjult som standard */
+    position: absolute;
+    border-radius: 5%;
+    background-color: #fff;
+    top: 33px; /* Justeret for at flytte længere ned */
+    left: 0;
+    z-index: 1;
+}
+
+#dropdown-tekst:hover {
+    display: none;
+}
+
+.nyttig-dropdown-content li {
+    padding: 12px 12px;
+}
+
+.nyttig-dropdown-content li a {
+    color: black;
+    text-decoration: none;
+}
+
+.nyttig-dropdown-arrow {
+    margin-left: 5px;
+}
+
+.nyttig-dropdown-content a {
+    color: black;
+    padding: 5px 0;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Hover til dropdown */
+.nyttig-dropdown-content li:hover {
+    background-color: #C5C5C5;
+}
+
+.nyttig-dropdown-content a:hover {
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Header responsive */
+
+@media (max-width: 1200px) {
+    .header-left-column {
+        width: 30%;
+    }
+    .header-right-column {
+        width: 70%;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-left-column {
+        width: 40%;
+    }
+    .header-right-column {
+        width: 60%;
+    }
+
+    .header-login-link {
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-left-column {
+        width: 100%;
+        text-align: center;
+    }
+    .header-right-column {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .header-top-right {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .header-main-nav.open {
+        display: flex;
+    }
+    .header-main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .header-main-nav li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+    .header-main-nav a {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-logo {
+        height: 5rem;
+    }
+    .site-header.scrolled .header-logo {
+        height: 3rem;
+    }
+    .header-top-right h1 {
+        font-size: 1.2em;
+    }
+    .site-header.scrolled .header-top-right h1 {
+        font-size: 1em;
+    }
+}
+
+/* Mobile Menu Toggle Button */
+.nav-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        color: white;
+    }
+}
+
+/*Header slut */
+
+/********************************************************************************************/
+
+/*Footer start*/
+.footer {
+    position: relative;
+    background: url('img/footerbillede.png') no-repeat center center/cover;
+    height: 450px;
+    color: white;
+}
+
+.Footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-gennemsigtig sort baggrund */
+    display: flex;
+    flex-direction: column; /* Gør indholdet i overlayet vertikalt */
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer-content {
+    display: flex;
+    flex-direction: column; /* Gør indholdet vertikalt */
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1000px; 
+    text-align: left;
+}
+
+.Footer-row1 {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 8rem; /* Lægger lidt plads mellem rækkerne */
+    margin-top: 4rem;
+}
+
+.Footer-row2 {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 1px; /* Lægger lidt plads mellem rækkerne */
+}
+
+.Footer-column {
+    width: 30%; /* Justere bredden af hver kolonne */
+}
+
+.Footer-column h2 {
+    margin: 0 0 10px 0;
+    text-decoration: underline;
+    color: white;
+}
+
+.Footer-column p {
+    margin: 0 0 15px 0;
+    color: #C5C5C5;
+}
+
+.Footer-column a {
+    margin: 0 0 15px 0;
+    color: #C5C5C5;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Tilføjer en 0.3 sekunders overgangseffekt */
+}
+
+.Footer-column a:hover {
+    color: #fff;
+}
+
+.social-icons img {
+    width: 30px; 
+    height: auto; 
+    margin-right: 10px; 
+}
+
+.Footer-logo-container {
+    text-align: center;
+    max-width: 55%; 
+    margin: 0 auto; 
+}
+
+.Footer-logo {
+    max-width: 100%; 
+    height: auto; 
+    margin: -50px 0 0 -150px;
+    margin-bottom: 2rem;
+}
+
+/* Footer Responsive */
+@media (max-width: 576px) {
+
+.Footer-column {
+    margin-left: 1rem;
+}
+    
+.Footer-logo {
+        display: none;
+    }
+
+.Footer-row2 {
+    margin-top: -6rem;
+}
+}
+
+/*Footer slut*/
+
+/********************************************************************************************/
+
+/*Velkommen til MHK start*/
+
+/*Banner start */
+
+.forside-banner-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.forside-banner {
+    display: block;
+    width: 100%;
+    height: 20rem;
+}
+
+.forside-banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to top, #B52A2D, rgba(255, 0, 0, 0));
+}
+.forside-banner-bottom-left {
+    position: absolute;
+    bottom: 1px;
+    left: 16px;
+    padding: 10px;
+    color: white;
+    font-size: xx-large;
+}
+
+/* Banner Responsive */
+@media (max-width: 992px) {
+    .forside-banner {
+        height: 15rem;
+    }
+    .forside-banner-bottom-left {
+        font-size: x-large;
+        left: 10px;
+        bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .forside-banner {
+        height: 12rem;
+    }
+    .forside-banner-bottom-left {
+        font-size: large;
+        left: 8px;
+        bottom: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .forside-banner {
+        height: 10rem;
+    }
+    .forside-banner-bottom-left {
+        font-size: medium;
+        left: 5px;
+        bottom: 3px;
+    }
+
+    .forside-maskot {
+        margin-left: 2rem;
+    }
+    .forside-video {
+        margin: 0 auto;
+    }
+}
+
+/*Banner færdig*/
+
+
+
+/*Velkommen start*/
+
+.forside-velkommen {
+    text-align: center;
+    width: 50%;
+    margin: 5rem auto 0 auto;
+    display: block;
+}
+
+.forside-velkommen a {
+    color: #B52A2D;
+}
+
+.forside-video-figur-container {
+    display: flex;
+    flex-direction: row;
+    padding: 5rem;
+    gap: 8rem;
+}
+
+.forside-video video{
+    width: 35rem;
+    margin-left: 12rem;
+}
+
+.forside-maskot img{
+    width: 20rem;
+}
+
+/* Velkommen Responsive */
+
+/*Responsive til desktop skærme, ca 24 tommer*/
+@media (min-width: 1200px) {
+.forside-video video {
+    width: 40rem;
+}
+
+.forside-maskot img {
+    width: 20rem;
+    margin-left: 5rem;
+    height: 23rem;
+}
+}
+
+@media (max-width: 1200px) {
+    .forside-velkommen {
+        width: 60%;
+    }
+    .forside-video video {
+        width: 30rem;
+        margin-left: 8rem;
+    }
+    .forside-maskot img {
+        width: 18rem;
+        margin-left: 4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .forside-velkommen {
+        width: 70%;
+    }
+    .forside-video-figur-container {
+        flex-direction: column;
+        padding: 3rem;
+        gap: 4rem;
+    }
+    .forside-video video {
+        width: 28rem;
+        margin: 0 auto;
+    }
+    .forside-maskot img {
+        width: 16rem;
+        margin-left: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .forside-velkommen {
+        width: 80%;
+        margin: 3rem auto 0 auto;
+    }
+    .forside-video video {
+        width: 24rem;
+        margin: 0 auto;
+    }
+    .forside-maskot img {
+        width: 14rem;
+        margin-left: 4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .forside-velkommen {
+        width: 90%;
+        margin: 2rem auto 0 auto;
+    }
+    .forside-video-figur-container {
+        padding: 2rem;
+        gap: 2rem;
+    }
+    .forside-video video {
+        width: 20rem;
+        margin: 0 auto;
+    }
+    .forside-maskot img {
+        width: 12rem;
+        margin-left: 4rem;
+    }
+}
+
+/*Velkommen slut*/
+
+/*Sponser slider start*/
+.forside-sponsor-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: #f0eff0;
+    padding: 10px 0;
+}
+.forside-sponsor-track {
+    display: flex;
+    width: calc(200px * 14);
+    animation: scroll 60s linear infinite;
+}
+.forside-sponsor {
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+}
+.forside-sponsor img {
+    max-width: 100%;
+    max-height: 100px;
+    margin: 1rem 2rem;
+}
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+/*Sponsor slider slut*/
+
+/*Hurtig videre start*/
+
+.forside-hurtig-videre h2 {
+    text-align: center;
+    margin-bottom: 5rem;
+    color: white;
+}
+
+.forside-hurtig-videre {
+    background-color: #B52A2D;
+    padding: 2rem;
+}
+
+.forside-ikoner-container {
+    display: flex;
+    text-align: center;
+}
+
+
+.forside-ikoner-container a {
+    color: white;
+    text-decoration: none;
+}
+
+.forside-ikoner-container img {
+    max-width: 40%;
+    transition: transform 0.3s ease-in-out; /* Smooth transition på hover effekten */
+}
+
+.forside-ikoner-container img:hover {
+    transform: translateY(-10px); /* flytter ikonet 10px op */
+}
+
+/* Hurtig videre Responsive */
+@media (max-width: 1200px) {
+    .forside-hurtig-videre h2 {
+        margin-bottom: 4rem;
+    }
+    .forside-ikoner-container img {
+        max-width: 80px; /* Adjust icon size */
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .forside-hurtig-videre h2 {
+        margin-bottom: 3rem;
+    }
+    .forside-ikoner-container {
+        justify-content: center; /* Center icons */
+    }
+    .forside-ikoner-container img {
+        max-width: 70px; /* Adjust icon size */
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .forside-hurtig-videre {
+        padding: 1.5rem;
+    }
+    .forside-hurtig-videre h2 {
+        margin-bottom: 2.5rem;
+    }
+    .forside-ikoner-container {
+        flex-direction: column; /* Stack icons vertically */
+        align-items: center;
+        overflow: hidden; /* Ensure no overflow */
+    }
+    .forside-ikoner-container a {
+        margin: 1rem 0; /* Adjust margin for vertical stacking */
+    }
+    .forside-ikoner-container img {
+        max-width: 60px; /* Adjust icon size */
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .forside-hurtig-videre {
+        padding: 1rem;
+    }
+    .forside-hurtig-videre h2 {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+    .forside-ikoner-container {
+        padding: 0; /* Remove padding to ensure no overflow */
+        margin: 0; /* Remove margin to ensure no overflow */
+    }
+    .forside-ikoner-container img {
+        max-width: 50px; /* Adjust icon size */
+        margin-top: 2rem;
+    }
+}
+
+/*Hurtig videre slut*/
+
+/*Velkommen til MHK slut*/
+
+/********************************************************************************************/
+
+/*ProjektNextGen side start*/
+
+/*Overskrift*/
+.PNG-overskrift {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/*Video*/
+.PNG-ompng-video {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.PNG-ompng-video video {
+    max-width: 45%;
+    margin: 0 auto;
+    display: block;
+}
+
+/*Hvad er projektnextgen?*/
+
+.hvad-er-png-container {
+    padding: 1rem;
+    background-color: #B52A2D;
+}
+
+.hvad-er-png-container h2 {
+    text-align: center;
+    color: white;
+}
+
+.hvad-er-png-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 60%;
+    margin: 2rem auto;
+}
+
+.hvad-er-png-content img{
+    max-width: 30%;
+}
+
+.hvad-er-png-content p {
+    max-width: 100%;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Overskrift, video og  Hvad er ProjektNextGen? Responsive */
+@media (max-width: 992px) {
+    .PNG-ompng-video video {
+        max-width: 90%; /* Further adjust for smaller screens */
+    }
+    .hvad-er-png-content {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center align items */
+        max-width: 90%; /* Adjust max width for smaller screens */
+    }
+    .hvad-er-png-content img {
+        max-width: 100px; /* Adjust image size */
+    }
+}
+
+@media (max-width: 576px) {
+    .hvad-er-png-container {
+        padding: 1rem 0.5rem; /* Adjust padding for smaller screens */
+    }
+    .PNG-ompng-video video {
+        max-width: 100%; /* Use full width for smallest screens */
+    }
+    .hvad-er-png-content {
+        max-width: 100%; /* Use full width for smallest screens */
+    }
+}
+
+/*Fra spiller til leder*/ 
+
+.fra-spiller-til-leder-container {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f0eff0;
+    gap: 2rem; /* justere mellemrum mellem text og billede */
+}
+
+.fra-spiller-til-leder-tekst {
+    flex: 1;
+}
+
+
+.fra-spiller-til-leder-tekst p, .fra-spiller-til-leder-tekst h3 {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333;
+    max-width: 50%;
+    text-align: center;
+    margin-left: 15rem;
+    margin-top: 3rem;
+}
+
+.fra-spiller-til-leder-billede {
+    flex: 1;
+    text-align: center;
+    margin-right: 10rem;
+}
+
+.fra-spiller-til-leder-billede img {
+    max-width: 80%;
+    height: auto;
+    
+}
+
+.fra-leder-til-spiller-divider-line {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin: 10px 0;
+}
+
+/* Fra spiller til leder Responsive  */
+@media (max-width: 992px) {
+    .fra-spiller-til-leder-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .fra-spiller-til-leder-tekst p, .fra-spiller-til-leder-tekst h3 {
+        max-width: 90%;
+        margin: 1rem auto;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .fra-spiller-til-leder-billede {
+        margin-right: 3rem;
+    }
+    .fra-spiller-til-leder-billede img {
+        max-width: 90%;
+        margin-right: 3rem;
+    }
+}
+
+
+/*Arrangementer*/
+
+.arrangementer-overskrift h2 {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: xx-large;
+}
+
+
+.arrangementer-overblik-container{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.arrangementer-overblik{
+    margin: 2rem 0;
+}
+
+
+.arrangementer-overblik img {
+    display: block;
+    margin: 0 auto;
+    max-width: 75%;
+    border-radius: 8%;
+}
+
+.arrangementer-overblik img:hover{
+    margin-top: -10px;
+    transition: 0.3s ease-in-out;
+}
+
+.arrangementer-knap {
+    text-align: center;
+}
+
+#arrangementer-knap {
+    display: inline-block;
+    padding: 12px 50px;
+    text-decoration: none;
+    background-color: #B52A2D;
+    border: #B52A2D solid;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 5rem;
+}
+
+#arrangementer-knap:hover {
+    background-color: transparent;
+  color: #B52A2D;
+}
+
+
+/* Arrangementer responsive */
+@media (max-width: 768px) {
+    .arrangementer-overblik-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .arrangementer-overblik img {
+        max-width: 90%; /* Adjust image size for smaller screens */
+    }
+}
+
+/*ProjektNextGen side slut*/
+
+/********************************************************************************************/
+
+/*Nyheder side start */
+
+.NY-header {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.NY-divider {
+    border: 0.3rem solid #B52A2D;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.NY-content-container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-left: 2.5%;
+}
+
+.NY-text-container {
+    width: 40%;
+    margin-bottom: 20px; /* Tilføj margin i bunden af tekstelementet */
+}
+
+.NY-text-container h3 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.NY-read-more-container{
+display: flex;
+flex-direction: flex-end;
+margin-top: 7.5rem;
+}
+.NY-read-more {
+    color: #B52A2D;
+    transition: color 0.3s ease; 
+}
+
+.NY-read-more:hover {
+    color: rgba(0, 0, 0, 1)
+}
+
+.NY-images-container {
+    display: flex;
+    margin-left: 20px;
+}
+
+.NY-image1-container,
+.NY-image2-container {
+    margin-right: 35px;
+}
+
+.NY-image1 {
+    margin-top: 35px;
+    width: 150px;
+    height: auto;
+}
+
+.NY-image2 {
+    width: 270px;
+    height: auto;
+    padding: 5px;
+    border-radius: 8%;
+    transition: transform .3s ease-out;
+}
+.NY-image2:hover {
+    transform: scale(1.05);
+}
+.NY-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5rem;
+}
+
+.NY-instagram-feed, .NY-facebook-feed {
+    width: 400px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+    height: 400px; /* Juster højden efter behov */
+}
+
+.NY-instagram-feed img {
+    width: calc(50% - 10px);
+    margin: 5px;
+}
+
+.tiktok {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.instagram h4, .facebook h4 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Nyheder Responsiv */
+@media (max-width: 768px) {
+    .NY-content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .NY-text-container {
+        max-width: 100%;
+        width: 60%;
+        text-align: center;
+    }
+
+    .NY-images-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .NY-image1,
+    .NY-image2 {
+        width: 100%;
+        max-width: 300px; /* Begræns maksimal bredde */
+    }
+
+    .NY-container {
+        flex-direction: column; /* Kolonne-layout for bedre responsivitet */
+        align-items: center;
+    }
+
+    .NY-instagram-feed, .NY-facebook-feed {
+        max-width: 80%; /* Fjern begrænsning af maksimal bredde */
+        margin: 0 auto;
+        border: none;
+        display: block;
+    }
+
+    .NY-read-more {
+        text-align: center;
+        margin: 0 auto;
+        color: #B52A2D;
+    }
+}
+
+@media (max-width: 480px) {
+    .NY-header {
+        font-size: 24px;
+    }
+
+    .NY-text-container h3 {
+        font-size: 20px;
+    }
+
+    .NY-read-more-container {
+        margin-top: 1rem;
+    }
+
+    .NY-image1 {
+        display: none;
+    }
+
+    .NY-image2 {
+        max-width: 100%;
+    }
+
+    .tiktok {
+        font-size: 1.2rem;
+    }
+}
+
+/* Nyheder side slut */
+
+/********************************************************************************************/
+
+/*Om MHK side start*/
+
+.OM-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.OM-image {
+    display: block;
+    width: 100%;
+    height: 20rem;
+}
+
+.OM-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%; 
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0));
+}
+
+.OM-bottom-left {
+    position: absolute;
+    bottom: 1px;
+    left: 16px;
+    padding: 10px;
+    color: white;
+    font-size: xx-large;
+}
+
+.OM-tekstfelt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 4rem;
+    line-height: 1.6; 
+}
+  
+.OM-tekstfelt h2 {
+font-size: 24px;
+text-align: center;
+}
+
+.OM-text {
+    max-width: 70%; 
+    line-height: 1.6; 
+    text-align: center;
+    margin-bottom: 4rem;
+}
+  
+
+.OM-maskot {
+    max-width: 100% ;
+    margin-left: 21px;
+}
+
+
+.OM-full-screen-box {
+    background-color: #B52A2D; 
+    max-width: 100%; 
+    height: 400px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    text-align: left;
+}
+
+.OM-text-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 80%; 
+}
+
+.OM-text-section {
+    flex: 1;
+    margin: 0 70px; 
+    line-height: 1.6;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.OM-header {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.OM-header h2 {
+    margin-left: 1rem;
+}
+
+.OM-icon {
+    margin-left: -5rem; 
+    width: 60px;
+    height: auto; 
+}
+
+.OM-text-section h2 {
+    font-size: 2rem; 
+    text-align: left;
+}
+
+.OM-text-section p {
+    font-size: 1rem; 
+}
+
+.OM-uddannelse {
+    text-align: center; 
+    margin: 0 auto;
+    width: 50%;
+    max-width: 100%;
+}
+
+.OM-uddannelse h2{
+    text-align: center;
+}
+
+#OM-img-link-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 2rem 0;
+}
+
+#OM-img-link {
+    display: inline-block;
+    padding: 12px 50px;
+    text-decoration: none;
+    background-color: #B52A2D;
+    border: #B52A2D solid;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    margin: 2rem;
+}
+
+#OM-img-link:hover {
+    background-color: transparent;
+  color: #B52A2D;
+}
+
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    .OM-tekstfelt {
+        flex-direction: column;
+        text-align: center;
+        margin-top: -1rem;
+    }
+
+    .OM-image {
+        height: 10rem;
+    }
+
+    .OM-text {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .OM-maskot {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .OM-full-screen-box {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .OM-text-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .OM-icon {
+        margin: 1rem auto;
+    }
+
+    .OM-header h2 {
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .OM-text-section h2 {
+        text-align: center;
+    }
+
+    .OM-uddannelse h2 {
+        max-width: 100%;
+       text-align: center;
+}
+
+    .OM-uddannelse {
+    width: 80%;
+    max-width: 100%;
+   text-align: center;
+}
+
+@media (max-width: 480px) {
+    .OM-bottom-left {
+        font-size: large;
+        left: 10px;
+    }
+
+    .OM-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #OM-img-link {
+        padding: 10px 30px;
+        font-size: 0.9rem;
+    }
+
+    #OM-img-link-container {
+        margin-bottom: 4rem;
+    }
+
+    .OM-image {
+        height: 10rem;
+    }
+}
+
+}
+
+/*Om MHK side slut*/
+
+/********************************************************************************************/
+
+/*Hold oversigt side start*/
+
+.Hold-hold-oversigt {
+    text-align: center; 
+    margin-bottom: 5rem;
+}
+
+.Hold-underoverskrifter {
+    display: flex;
+    justify-content: space-around; 
+    text-align: left;
+    margin-top: 20px; 
+}
+
+.Hold-underoverskrift {
+    flex-basis: 15%; 
+}
+
+.Hold-underoverskrift h3 {
+    border-bottom: 2px solid #B52A2D; 
+    padding-bottom: 10px; 
+}
+
+.Hold-underoverskrift ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.Hold-underoverskrift ul li {
+    margin-bottom: 30px; 
+}
+.Hold-underoverskrift a {
+    text-decoration: none; 
+    color: black;
+    transition: color 0.3s ease; 
+    
+}
+.Hold-underoverskrift a:hover {
+    color: #B52A2D;
+}
+
+.Hold-red-boks {
+    background-color: #B52A2D; 
+    width: 100%; 
+    height: auto; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.Hold-tekst-indhold {
+    display: flex;
+    align-items: center; 
+    color: white; 
+    width: 100%;
+    max-width: 1000px;
+    line-height: 1.5;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Hold-maskot {
+    width: 25%;
+    max-width: 100%;
+    height: auto;
+    margin-right: 5rem;
+}
+
+.hold-red-tekst {
+    max-width: 600px;
+}
+
+#Hold-img-link-container {
+    margin-top: 1.5rem;
+}
+
+#Hold-img-link {
+    display: inline-block;
+    padding: 12px 50px;
+    text-decoration: none;
+    background-color: white;
+    border: #fff solid;
+    color: #B52A2D;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 2rem;
+}
+
+#Hold-img-link:hover {
+    background-color: #B52A2D;
+    color: white;
+}
+
+.Hold-afsnit {
+    text-align: center; 
+    margin-top: 50px; 
+}
+
+.Hold-billede-container {
+    margin-top: 20px; 
+    margin-bottom: 60px; 
+}
+
+.Hold-afsnit .navigation {
+    margin-bottom: 20px; 
+}
+
+.Hold-afsnit .navigation .pile {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #B52A2D;
+    color: white; 
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.Hold-afsnit .navigation .pile:hover {
+    background-color: #8C1D20; 
+}
+
+.Hold-billede{
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.9);
+    width: 50%;
+    max-width: 100%;
+
+}
+
+/* Responsiv design for tablet */
+@media (max-width: 768px) {
+
+    .Hold-underoverskrifter {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Hold-underoverskrift {
+        margin-bottom: 20px; /* Tilføjet margin for bedre afstand */
+    }
+
+    .Hold-tekst-indhold {
+        flex-direction: column;
+    }
+
+    .Hold-maskot {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .hold-red-tekst {
+        text-align: center;
+    }
+
+
+    .Hold-billede {
+        max-width: 100%;
+    }
+}
+
+/* Responsiv design for mobil */
+@media (max-width: 480px) {
+    .Hold-underoverskrifter {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Hold-underoverskrift {
+        flex-basis: 100%;
+        margin-bottom: 20px; /* Tilføjet margin for bedre afstand */
+    }
+
+    .Hold-red-boks {
+        padding: 1rem 1rem; /* Juster padding for bedre udseende på mobil */
+    }
+
+    .Hold-tekst-indhold {
+        width: 100%;
+        max-width: 100%;
+        font-size: 14px; /* Mindre tekststørrelse for mobil */
+    }
+
+    #Hold-img-link {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .Hold-afsnit .navigation .pile {
+        max-width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 18px;
+    }
+
+    .Hold-billede {
+        max-width: 100%;
+    }
+
+    .Hold-afsnit .navigation span {
+        font-size: 16px; /* Mindre tekststørrelse for navigation */
+    }
+}
+
+
+/*Hold oversigt side slut*/
+
+/********************************************************************************************/
+
+/*Kontakt side start*/
+
+/*Kontakt formand eller næstformand*/
+
+.kontakt-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.kontakt-formand-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 800px;
+}
+
+.kontakt-formand-billede img {
+    padding: 0;
+    margin: 0;
+    max-width: 80%;
+    border-radius: 8px;
+}
+
+
+.kontakt-overskrift h1 {
+    text-align: center;
+}
+
+.kontakt-formand-oplysninger {
+    text-align: center;
+    position: relative;
+    margin-left: 10rem; /* mellemrum mellem billede og tekst */
+}
+
+.kontakt-formand-oplysninger h3, h4, p {
+    margin: 0.5rem 0
+}
+
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .kontakt-formand-container {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center align text */
+    }
+    
+    .kontakt-formand-oplysninger {
+        margin-left: 0; /* Remove left margin */
+        margin-top: 1rem; /* Add top margin */
+    }
+    .kontakt-formand-billede img {
+        max-width: 100%; /* Adjust image size */
+    }
+}
+
+/*Devider linje*/
+
+.kontakt-divider-line{
+    width: 100%;
+    height: 10px;
+    background-color: #B52A2D;
+    margin: 10px 0;
+}
+
+.brug-kontakt-formular {
+    font-weight: bold;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+/*Kontakt Formular*/
+
+.kontakt-form-container {
+    background-color: white;
+    border: 2px solid #B52A2D;
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 2rem auto;
+    max-width: 70%;
+    height: 30rem;
+}
+
+.kontakt-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.kontakt-form label {
+    font-weight: bold;
+}
+
+.kontakt-form input, .kontakt-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+    resize: none;
+}
+
+.kontakt-form button {
+    background-color: #B52A2D;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    max-width: 30%;
+}
+
+.kontakt-form button:hover {
+    background-color: transparent;
+    color: #B52A2D;
+    border: 2px solid #B52A2D;
+}
+
+.kontakt-mascot {
+    position: absolute;
+    bottom: 0px;
+    right: 10rem;
+}
+
+.kontakt-mascot img {
+    width: 7rem; /* Adjust the size as needed */
+    height: auto;
+}
+@media (max-width: 768px) {
+    .kontakt-mascot {
+        margin-right: -8rem;
+        margin-bottom: 1rem;
+    }
+
+    .kontakt-form button {
+        max-width: 50%;
+    }
+
+    .brug-kontakt-formular {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/*Kontakt side slut*/
+
+/********************************************************************************************/
+
+/*404 error side start*/
+
+.error-img {
+max-width: 100%;
+margin-top: 3rem;
+}
+.error-img img {
+max-width: 30%;
+margin: 0 auto;
+display: block;
+}
+
+.error-tekst {
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.error-center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.error-back-button {
+    background-color: #B52A2D;
+    color: white;
+    padding: 10px 5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 1; 
+    display: block;
+    margin-top: 7rem;
+    font-weight: bold;
+}
+
+.error-back-button:hover {
+    background-color: transparent;
+    color: #B52A2D;
+    border: 2px solid #B52A2D;
+    font-weight: bold;
+}
+
+.maskot-paa-knap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.error-maskot {
+    position: absolute;
+    bottom: 50%; /* Position the mascot above the button */
+    left: 15%;
+    transform: translate(-50%, 50%); /* Center the mascot horizontally and move it down by 50% of its height */
+    z-index: 2; /* Ensure the mascot is above the button */
+    width: 100px; /* Adjust size as necessary */
+    height: auto;
+}
+
+/*404 error side slut*/
+
+/********************************************************************************************/
+
+/*Hold side*/
+
+.team-overksrift {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.team-velkommen {
+    text-align: center;
+}
+
+.team-velkommen a{
+    color: #B52A2D;
+}
+
+.team-treaningstider {
+    text-align: center;
+    margin-top: 5rem;
+    background-color: #B52A2D;
+    padding: 2rem;
+    color: white;
+}
+
+.team-container {
+    display: flex;
+    margin: 1rem auto auto auto;
+    max-width: 50%;
+    justify-content: center;
+    gap: 15rem;
+}
+
+
+
+.team-kontakt-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.team-kontakt-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.team-kontakt-billede img {
+    max-width: 300px; /* Fast bredde for at sikre stabilitet */
+    height: auto;
+    border-radius: 8px;
+    margin-left: 10rem;
+}
+
+.team-kontakt h1 {
+    text-align: center;
+}
+
+.team-kontakt-oplysninger {
+    text-align: left;
+    margin-left: 5rem;
+    flex-grow: 1;
+}
+
+/* Responsive trille trolle */
+@media (max-width: 1200px) {
+    .team-container {
+        flex-direction: column;
+        max-width: 80%;
+        gap: 5rem;
+        margin-top: 1rem;
+    }
+
+    .team-container img {
+        display: none;
+    }
+
+    .team-kontakt-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .team-kontakt-billede img {
+        margin-left: 0;
+        margin-bottom: 1rem;
+        max-width: 80%;
+    }
+
+    .team-kontakt-oplysninger {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-velkommen {
+        padding: 1rem;
+    }
+    
+    .team-container {
+        max-width: 100%;
+        gap: 2rem;
+    }
+
+    .team-container img {
+        max-width: 60%;
+    }
+
+    .team-kontakt-billede img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container img {
+        max-width: 80%;
+    }
+
+    .team-treaningstider {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+}
+
+/*Trille Trolle slut*/
